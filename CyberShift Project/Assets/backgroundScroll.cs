@@ -8,17 +8,28 @@ public class backgroundScroll : MonoBehaviour
     public float scrollEffectMultiplier;
 
     private Transform mainCamera;
-    private Vector3 startPosition;
+    private float startPosition;
+    private float spriteSize;
     void Start()
     {
         mainCamera = Camera.main.transform;
-        startPosition = transform.position;
+        startPosition = transform.position.x;
+        spriteSize = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        float distance = mainCamera.position.x * scrollEffectMultiplier;
-        transform.position = new Vector3(startPosition.x + distance, transform.position.y, transform.position.z);
+        float backgroundCameraPosition = mainCamera.position.x * (1 - scrollEffectMultiplier);
+        float backgroundDistance = mainCamera.position.x * scrollEffectMultiplier;
+        transform.position = new Vector3(startPosition + backgroundDistance, transform.position.y, transform.position.z);
+        if (backgroundCameraPosition > startPosition + spriteSize)
+        {
+            startPosition += spriteSize;
+        }
+        else if (backgroundCameraPosition < startPosition - spriteSize)
+        {
+            startPosition -= spriteSize;
+        }
     }
 }
