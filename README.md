@@ -24,4 +24,7 @@ Milestone 4 Devlog goes here.
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
-- Cite any external assets used here!
+Player character model: https://assetstore.unity.com/packages/2d/environments/robot-shooting-game-sprite-free-93902
+Charged shot projectile sprite: https://assetstore.unity.com/packages/2d/textures-materials/abstract/warped-shooting-fx-195246
+Environment and enemies (purchased): https://assetstore.unity.com/packages/2d/environments/warped-city-2-200208
+
