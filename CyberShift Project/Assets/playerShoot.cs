@@ -19,12 +19,20 @@ public class playerShoot : MonoBehaviour
         {
             if (boltPrefab != null) 
             {
-                GameObject bolt = Instantiate(boltPrefab);
-                bolt.transform.position = new Vector3(transform.position.x + .4f, transform.position.y + .2f, -1);
+                float direction = Mathf.Sign(transform.localScale.x);
+                Vector3 spawnPosition = new Vector3(transform.position.x + (0.7f * direction), transform.position.y + 0.06f, -1);
+
+                GameObject bolt = Instantiate(boltPrefab, spawnPosition, Quaternion.identity);
+
+                boltScript shootLogic = bolt.GetComponent<boltScript>();
+                if (shootLogic != null)
+                {
+                    shootLogic.FireInDirection(direction);
+                }
             }
             else
             {
-                Debug.LogWarning("Bolt Prefab is not assigned in the Inspector!");
+                Debug.LogWarning("No bolt to fire");
             }
         }
     }

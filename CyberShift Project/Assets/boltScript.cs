@@ -6,14 +6,24 @@ public class boltScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rb2d;
-    void Start()
+    public float speed = 15f;
+    
+    void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(3, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FireInDirection(float direction)
     {
+        rb2d.velocity = new Vector2(speed * direction, 0);
+
+        if (direction < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
