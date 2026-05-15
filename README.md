@@ -16,7 +16,15 @@ My breakdown was updated to include my tilemap system, which is used in two diff
 My state machine is used to control three states that my player has. The player is meant to pick up a power up during the level, which will give the player the ability to charge up their shot, which will make it more powerful, faster, and larger. I programmed the logic for how that will work in this state machine, but I haven’t decided what the power up will look like, so I didn’t include it in this milestone. It will be ready by milestone 2. However, the functionality of how it will work is here and working. The state machine has 3 states: not charging, charging, and charged. The not charging state is the start state, and is transitioned into when the player presses the left mouse button. This transitions it into the charging state, which sets up a timer for one and a half seconds, and if the player holds down the button for that amount of time, the shot that should be instantiated will instead come out as a faster, larger bolt shot with a different animation. If the player lets go of the button before this, the shot doesn’t come out. The timer is then reset as it transitions back to the not charged state. 
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+
+### Devlog Question 1:
+
+My complicating gameplay factor in my project is the charge shot that the player is supposed to gain in the game being used to defeat a boss at the end of the level. To build this, I plan on following these steps:
+
+- Place the power up in the level (This involves creating a power up bubble and attaching a script to it that enables the boolean on my script machine. This will allow the player to then charge their shots)
+- Build a boss enemy (I will probably scale up one of my enemies for this milestone before creating a unique boss model. I will also need to attach movement scripts to it, as my current enemies dont move.)
+
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
