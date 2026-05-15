@@ -9,6 +9,7 @@ public class boltScript : MonoBehaviour
     public float speed = 15f;
     public float bulletLifetime = 2f;
     public int damageValue = 1;
+    public string layerName = "Enemy";
 
     void Awake()
     {
@@ -32,7 +33,7 @@ public class boltScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (hitInfo.gameObject.layer == LayerMask.NameToLayer(layerName))
         {
             damageCheck targetdamageCheck = hitInfo.GetComponent<damageCheck>();
             if (targetdamageCheck != null)
