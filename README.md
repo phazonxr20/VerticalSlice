@@ -21,9 +21,24 @@ My state machine is used to control three states that my player has. The player 
 
 My complicating gameplay factor in my project is the charge shot that the player is supposed to gain in the game being used to defeat a boss at the end of the level. To build this, I plan on following these steps:
 
-- Place the power up in the level (This involves creating a power up bubble and attaching a script to it that enables the boolean on my script machine. This will allow the player to then charge their shots)
-- Build a boss enemy (I will probably scale up one of my enemies for this milestone before creating a unique boss model. I will also need to attach movement scripts to it, as my current enemies dont move.)
+- Place the power up in the level (This involves creating a power up bubble and attaching a script to it that enables the boolean on my script machine. This will allow the player to then charge their shots.)
+- Build a boss enemy (I will probably scale up one of my enemies for this milestone before creating a unique boss model. I will also need to attach movement scripts to it, as my current enemies dont move. I also will need to add a health system into the game, so that the charge shot actually helps the player deal more damage to the boss as the complicating gameplay factor.)
 
+### Devlog Question 2:
+
+The breakdown I wrote wasn't too helful for me, as I already knew the general process of what I was going to make. It was nice getting it out on paper, however. For next time, I will probably have a lot more to do that I don't know as well as I knew with this breakdown, in which my breakdown will be more useful in actually figuring out what needs to get done. 
+
+### Devlog Question 3:
+
+I am bridging visual scripting and code in my project in how I am using my charge shot ability pick up. The check for if the player interacts with it is built in c# code in the AbilityChargeCheck.cs script, but it triggers the boolean value in my state machine to change to be true, which allows for the state machine to start cycling through its three states, the no charge state, the charging state, and the charged state. This all allows for my complicating gameplay factor to work, which is getting a new ability to help defeat a boss easier.
+
+<img width="745" height="480" alt="Screenshot 2026-05-15 at 5 14 07 AM" src="https://github.com/user-attachments/assets/1ce8a7c8-8772-4011-a0c8-9f21c591c30c" />
+
+<img width="1395" height="497" alt="Screenshot 2026-05-15 at 5 14 43 AM" src="https://github.com/user-attachments/assets/3116efe7-bd41-4cd5-8721-5ed4b1b750ad" />
+
+### Devlog Question 4:
+
+My tilemap usage should be graded for this question. I built all of the platforms in the game with tilemaps, and I placed all of the non-boss enemies with the GameObject tilemap brush in the tilemap editor.
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
