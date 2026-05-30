@@ -10,6 +10,7 @@ public class boltScript : MonoBehaviour
     public float bulletLifetime = 2f;
     public int damageValue = 1;
     public string layerName = "Enemy";
+    public bool startLeftSide = false;
 
     void Awake()
     {
@@ -20,15 +21,24 @@ public class boltScript : MonoBehaviour
     public void FireInDirection(float direction)
     {
         rb2d.velocity = new Vector2(speed * direction, 0);
+        Vector3 currentScale = transform.localScale;
 
-        if (direction < 0)
+        float visualDirection = direction;
+        if (startLeftSide)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+
+            visualDirection = -direction; 
+        }
+
+        if (visualDirection < 0)
+        {
+            currentScale.x = -Mathf.Abs(currentScale.x);
         }
         else
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            currentScale.x = Mathf.Abs(currentScale.x);
         }
+        transform.localScale = currentScale;
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

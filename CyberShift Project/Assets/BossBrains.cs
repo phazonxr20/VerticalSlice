@@ -8,7 +8,7 @@ public class BossBrains : MonoBehaviour
     public BossState currentState;
     public Rigidbody2D rb2d;
     public GameObject bossShotPrefab;
-    public Transform ShotSpawnPoint;
+    public Transform ShotSpawnPointB;
     public float jumpForce = 15f;
     public float jumpForwardSpeed = -5f;
 
@@ -38,7 +38,7 @@ public class BossBrains : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bossShotPrefab, ShotSpawnPoint.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bossShotPrefab, ShotSpawnPointB.position, Quaternion.identity);
         
         boltScript bulletLogic = bullet.GetComponent<boltScript>();
         

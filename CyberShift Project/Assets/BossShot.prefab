@@ -197,3 +197,4 @@ MonoBehaviour:
   bulletLifetime: 2
   damageValue: 1
   layerName: Player
+  startLeftSide: 1
