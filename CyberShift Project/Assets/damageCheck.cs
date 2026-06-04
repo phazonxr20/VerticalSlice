@@ -37,6 +37,15 @@ public class damageCheck : MonoBehaviour
 
     void deleteEntity()
     {
+        if (gameObject.CompareTag("Player"))
+        {
+            GameOverScript go = FindObjectOfType<GameOverScript>();
+            if (go != null)
+            {
+                go.TriggerGameOver();
+            }
+        }
+
         Destroy(gameObject);
     }
 
