@@ -6,6 +6,8 @@ public class playerShoot : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject boltPrefab;
+    [SerializeField] private AudioSource playerAudioSource;
+    [SerializeField] private AudioClip shotSound;
     Animator animator;
     void Start()
     {
@@ -28,6 +30,10 @@ public class playerShoot : MonoBehaviour
                 if (shootLogic != null)
                 {
                     shootLogic.FireInDirection(direction);
+                }
+                if (playerAudioSource != null && shotSound != null)
+                {
+                    playerAudioSource.PlayOneShot(shotSound);
                 }
             }
             else
